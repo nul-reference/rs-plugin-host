@@ -35,7 +35,14 @@ unsafe impl GlobalAlloc for Allocator {
     }
 }
 
-#[link(name = "allocator", kind = "dylib")]
+#[cfg_attr(
+    all(target_os = "windows", target_env = "msvc"),
+    link(name = "allocator.dll")
+)]
+#[cfg_attr(
+    not(all(target_os = "windows", target_env = "msvc")),
+    link(name = "allocator")
+)]
 extern "C" {
     fn shared_alloc(size: libc::size_t, align: libc::size_t) -> *mut u8;
     fn shared_alloc_zeroed(size: libc::size_t, align: libc::size_t) -> *mut u8;
