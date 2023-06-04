@@ -1,6 +1,6 @@
 use std::ffi::{c_char, CStr, CString};
 
-//pub mod allocator;
+pub mod allocator;
 
 #[derive(Debug)]
 #[repr(C)]
