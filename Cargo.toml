@@ -2,14 +2,5 @@
 package.authors = ["Underscore Nul <underscorenul@proton.me"]
 package.license = "bsd-3-clause"
 package.repository = "https://github.com/nul-reference/rs-plugin-host"
-members = ["host", "plugins/*", "api", "allocator"]
+members = ["host", "plugins/*", "api", "allocator", "tag_registry"]
 resolver = "2"
-
-[profile.dev]
-rpath = true
-
-[profile.release]
-rpath = true
-
-[profile.test]
-rpath = true
