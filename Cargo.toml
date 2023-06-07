@@ -2,5 +2,5 @@
 package.authors = ["Underscore Nul <underscorenul@proton.me"]
 package.license = "bsd-3-clause"
 package.repository = "https://github.com/nul-reference/rs-plugin-host"
-members = ["host", "plugins/*", "api", "allocator", "tag_registry"]
+members = ["host", "api", "plugins/*"]
 resolver = "2"
