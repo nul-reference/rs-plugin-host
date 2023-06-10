@@ -10,4 +10,4 @@ license.workspace = true
 crate-type = ["cdylib"]
 
 [dependencies]
-api = { path = "../../api" }
+host = { path = "../../host" }

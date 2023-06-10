@@ -12,6 +12,11 @@ struct RegistryState {
     id_vec: Vec<*const c_char>,
 }
 
+/// # Safety
+/// The pointer passed as tag name must be a non-null pointer to a string of UTF-8
+/// encoded characters, ending in a nul character (`\0`).
+///
+/// This function is not thread safe.
 #[no_mangle]
 pub unsafe extern "C" fn register_tag(tag_name: *const c_char) -> usize {
     let tag = CStr::from_ptr(tag_name).to_owned();
@@ -25,6 +30,11 @@ pub unsafe extern "C" fn register_tag(tag_name: *const c_char) -> usize {
     }
 }
 
+/// # Safety
+/// The pointer passed as tag name must be a non-null pointer to a string of UTF-8
+/// encoded characters, ending in a nul character (`\0`).
+///
+/// This function is not thread safe.
 #[no_mangle]
 pub unsafe extern "C" fn lookup_tag(
     tag_name: *const c_char,
@@ -39,6 +49,11 @@ pub unsafe extern "C" fn lookup_tag(
     }
 }
 
+/// # Safety
+/// The pointer passed as tag name must be a non-null pointer to a string of UTF-8
+/// encoded characters, ending in a nul character (`\0`).
+///
+/// This function is not thread safe.
 #[no_mangle]
 pub unsafe extern "C" fn get_tag_by_id(
     tag_id: usize,

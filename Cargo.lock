@@ -3,14 +3,6 @@
 version = 3
 
 [[package]]
-name = "api"
-version = "0.1.0"
-dependencies = [
- "libc",
- "once_cell",
-]
-
-[[package]]
 name = "counter"
 version = "0.1.0"
 
@@ -20,9 +12,9 @@ version = "0.1.0"
 
 [[package]]
 name = "dlopen2"
-version = "0.4.1"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b121caccfc363e4d9a4589528f3bef7c71b83c6ed01c8dc68cbeeb7fd29ec698"
+checksum = "09b4f5f101177ff01b8ec4ecc81eead416a8aa42819a2869311b3420fa114ffa"
 dependencies = [
  "dlopen2_derive",
  "libc",
@@ -32,9 +24,9 @@ dependencies = [
 
 [[package]]
 name = "dlopen2_derive"
-version = "0.2.0"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3a09ac8bb8c16a282264c379dffba707b9c998afc7506009137f3c6136888078"
+checksum = "a6cbae11b3de8fce2a456e8ea3dada226b35fe791f0dc1d360c0941f0bb681f3"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -45,7 +37,6 @@ dependencies = [
 name = "host"
 version = "0.1.0"
 dependencies = [
- "api",
  "dlopen2",
  "once_cell",
 ]
@@ -54,7 +45,7 @@ dependencies = [
 name = "increment"
 version = "0.1.0"
 dependencies = [
- "api",
+ "host",
 ]
 
 [[package]]
@@ -89,9 +80,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "1.0.109"
+version = "2.0.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237"
+checksum = "32d41677bcbe24c20c52e7c70b0d8db04134c5d1066bf98662e2871ad200ea3e"
 dependencies = [
  "proc-macro2",
  "quote",
